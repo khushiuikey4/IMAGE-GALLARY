@@ -11,12 +11,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .container {
-    width: 750px;
-    height: 350px;
-    background-color: aliceblue;
+    width: 800px;
+    height: 400px;
+    background-color: black;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -24,9 +25,9 @@ body {
 }
 
 .innerContainer {
-    width: 720px;
-    height: 320px;
-    background-color: white;
+    width: 748px;
+    height: 370px;
+    background-color: black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -34,7 +35,8 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-
+    position: relative;
+    padding: 15px;
 }
 
 .innerContainer::-webkit-scrollbar {
@@ -46,5 +48,25 @@ body {
     background-color: red;
     width: 230px;
     height: 320px;
+    filter: grayscale(100%);
+    transform: scale(1);
+    transition: transform 0.5s;
+    background-size: cover;
+}
 
+.photo:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.nav {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
 }
