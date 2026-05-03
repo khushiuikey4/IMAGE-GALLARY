@@ -1,22 +1,19 @@
 let container = document.querySelector(".innerContainer");
+
+let leftButton = document.querySelector(".left");
+let rightButton = document.querySelector(".right");
+let d = 735;
 container.addEventListener("wheel", (e) => {
     e.preventDefault();
-    if (isScrolling) return;
-    isScrolling = true;
-    let scrollAmount = 735;
-    if (e.deltaY > 0 || e.deltaX > 0) {
-        container.scrollBy({
-            left: scrollAmount,
-            behavior: "smooth"
-        });
-    } else {
-        container.scrollBy({
-            left: -scrollAmount,
-            behavior: "smooth"
-        });
-    }
-    setTimeout(() => {
-        isScrolling = false;
-    }, 400); // match animation duration
-
-});
+    container.scrollLeft += e.deltaX;
+})
+let leftSwap = () => {
+    container.scrollLeft -= d;
+    container.style.scrollBehaviour = "smooth";
+}
+let rightSwap = () => {
+    container.scrollLeft += d;
+    container.style.scrollBehaviour = "smooth";
+}
+leftButton.addEventListener("click", leftSwap);
+rightButton.addEventListener("click", rightSwap);
